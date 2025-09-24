@@ -1,4 +1,4 @@
-package ProjectTest;
+package ProjectTest.Documentos;
 
 import java.time.LocalDate;
 
@@ -11,6 +11,9 @@ public class Documento {
         this.nomeConstante = nomeConstante;
         this.dataNascimento = dataNascimento;
         this.validade = validade;
+    }
+
+    public Documento() {
     }
 
 
