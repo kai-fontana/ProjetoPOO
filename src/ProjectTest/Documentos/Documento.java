@@ -2,40 +2,22 @@ package ProjectTest.Documentos;
 
 import java.time.LocalDate;
 
-public class Documento {
+public abstract class Documento {
     private String nomeConstante;
     private LocalDate dataNascimento;
-    private LocalDate validade;
+    private LocalDate getValidade;
 
     public Documento(String nomeConstante, LocalDate dataNascimento, LocalDate validade) {
         this.nomeConstante = nomeConstante;
         this.dataNascimento = dataNascimento;
-        this.validade = validade;
+        this.getValidade = validade;
     }
 
     public Documento() {
     }
 
 
-    public boolean estaValido() {
-        LocalDate hoje = LocalDate.now();
-
-        //Tudo que for antes da data de validade é válido.
-        if (hoje.isBefore(validade)) {
-            System.out.println("O documento ainda está válido (vence em " + validade + ").");
-            return true;
-        }
-        //Tudo que for NO DIA da data de validade é válido.
-        else if (hoje.isEqual(validade)) {
-            System.out.println("O documento vence HOJE (" + validade + ").");
-            return true;
-        }
-        //Tudo que passar da data de validade é inválido
-        else {
-            System.out.println("O documento está EXPIRADO (venceu em " + validade + ").");
-            return false;
-        }
-    }
+    public abstract boolean estaValido();
 
 
     public String getNomeConstante() {
@@ -47,6 +29,6 @@ public class Documento {
     }
 
     public LocalDate getValidade() {
-        return validade;
+        return getValidade;
     }
 }
