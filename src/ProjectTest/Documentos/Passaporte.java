@@ -28,5 +28,10 @@ public class Passaporte extends Documento{
     public String getPaisDeOrigem() {
         return paisDeOrigem;
     }
+
+    @Override
+    public void exibirDocumentos() {
+
+    }
 }
 

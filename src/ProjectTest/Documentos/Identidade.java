@@ -33,4 +33,9 @@ public class Identidade extends Documento{
     public LocalDate getDataNascimento() {
         return dataNascimento;
     }
+
+    @Override
+    public void exibirDocumentos() {
+
+    }
 }

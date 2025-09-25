@@ -29,4 +29,9 @@ public class ResidenciaTemporaria extends Documento{
     public int getDiasDeResidencia() {
         return diasDeResidencia;
     }
+
+    @Override
+    public void exibirDocumentos() {
+
+    }
 }

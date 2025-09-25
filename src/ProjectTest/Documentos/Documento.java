@@ -44,4 +44,7 @@ public abstract class Documento {
     public LocalDate getValidade() {
         return validade;
     }
+
+    public abstract void exibirDocumentos();
+
 }

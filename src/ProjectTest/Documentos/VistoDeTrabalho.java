@@ -36,5 +36,10 @@ public class VistoDeTrabalho extends Documento{
     public int getDiasDeTrabalho() {
         return diasDeTrabalho;
     }
+
+    @Override
+    public void exibirDocumentos() {
+
+    }
 }
 
