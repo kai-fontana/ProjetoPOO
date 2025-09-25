@@ -15,7 +15,8 @@ public abstract class Documento {
     }
 
 
-    public boolean estaValido(){
+    public boolean estaValido() {
+        //Todo documento terá este método, que sempre terá, mínimamente, esta estrutura:
         LocalDate hoje = LocalDate.now();
         //.isBefore significa que tudo que for antes da data de validade é válido.
         if (hoje.isBefore(getValidade())) {
@@ -35,6 +36,7 @@ public abstract class Documento {
     }
 
     public abstract boolean verificarLegalidade(Imigrante dadosImigrante);
+    //Todos documentos devem ter este metodo, mas ele varia a cada subclasse devido seus diferentes atributos
 
 
     public String getNomeCompleto() {

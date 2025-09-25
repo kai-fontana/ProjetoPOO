@@ -18,10 +18,12 @@ public class MainTest {
 
         Identidade identidade1 = new Identidade("Kai", LocalDate.of(2027, 07,24), LocalDate.of(2004, 12, 14));
 
+
+        //Para utilizar o metodo verificarLegalidade, se deve definir qual o imigrante entre os parâmetros
         if(identidade1.verificarLegalidade(imigrante1)){
-            System.out.println("aaa");
+            System.out.println("true");
         } else {
-            System.out.println("bbb");
+            System.out.println("false");
         }
 
 
