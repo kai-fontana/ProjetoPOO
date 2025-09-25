@@ -1,26 +1,36 @@
 package ProjectTest.Documentos;
 
+import ProjectTest.Imigrantes.Imigrante;
+
 import java.time.LocalDate;
 
 public class Identidade extends Documento{
-    @Override
-    public boolean estaValido() {
-        LocalDate hoje = LocalDate.now();
+    private LocalDate dataNascimento;
 
-        //Tudo que for antes da data de validade é válido.
-        if (hoje.isBefore(getValidade())) {
-            System.out.println("O documento ainda está válido (vence em " + getValidade() + ").");
+    public Identidade(String nomeCompleto, LocalDate validade, LocalDate dataNascimento) {
+        super(nomeCompleto, validade);
+        this.dataNascimento = dataNascimento;
+    }
+
+    @Override
+    public boolean verificarLegalidade(Imigrante dadosImigrante) {
+        if(estaValido() && dadosImigrante.getNome().equals(getNomeCompleto()) && dadosImigrante.getIdade() == calcularIdade()){
             return true;
-        }
-        //Tudo que for NO DIA da data de validade é válido.
-        else if (hoje.isEqual(getValidade())) {
-            System.out.println("O documento vence HOJE (" + getValidade() + ").");
-            return true;
-        }
-        //Tudo que passar da data de validade é inválido
-        else {
-            System.out.println("O documento está EXPIRADO (venceu em " + getValidade() + ").");
+        } else {
             return false;
         }
+    }
+    //
+
+
+    public int calcularIdade(){
+        return 2025 - getDataNascimento().getYear();
+    }
+    //
+
+
+
+    public LocalDate getDataNascimento() {
+        return dataNascimento;
     }
 }

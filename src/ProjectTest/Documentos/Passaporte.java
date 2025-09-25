@@ -1,5 +1,7 @@
 package ProjectTest.Documentos;
 
+import ProjectTest.Imigrantes.Imigrante;
+
 import java.time.LocalDate;
 
 public class Passaporte extends Documento{
@@ -7,18 +9,16 @@ public class Passaporte extends Documento{
     private String numeroDoPassaporte;
     private String paisDeOrigem;
 
-    public Passaporte(String nome, LocalDate dataNascimento, LocalDate validade, String numeroDoPassaporte, String paisDeOrigem){
-
-        super(nome, dataNascimento,validade);
-
+    public Passaporte(String nomeCompleto, LocalDate validade, String numeroDoPassaporte, String paisDeOrigem) {
+        super(nomeCompleto, validade);
         this.numeroDoPassaporte = numeroDoPassaporte;
         this.paisDeOrigem = paisDeOrigem;
     }
 
-    @Override
-    public boolean estaValido() {
-        return !LocalDate.now().isAfter(this.getValidade());
 
+    @Override
+    public boolean verificarLegalidade(Imigrante dadosImigrante) {
+        return false;
     }
 
     public String getNumeroDoPassaporte() {

@@ -1,4 +1,6 @@
-package ProjectTest;
+package ProjectTest.Imigrantes;
+
+import ProjectTest.Documentos.Identidade;
 
 public class Imigrante {
     private String nome;
@@ -6,12 +8,12 @@ public class Imigrante {
     private String nacionalidade;
     private boolean imigranteLegal;
 
-    public Imigrante(String nome, int idade, String nacionalidade, boolean imigranteLegal) {
+    public Imigrante(String nome, int idade, String nacionalidade) {
         this.setNome(nome);
         this.setIdade(idade);
         this.setNacionalidade(nacionalidade);
-        this.setImigranteLegal(imigranteLegal);
     }
+
 
 
     public void dialogo() {
@@ -27,14 +29,6 @@ public class Imigrante {
 
 
     public void verificarRegras() {
-        if (nacionalidade.equalsIgnoreCase("argentino") ||
-                nacionalidade.equalsIgnoreCase("mexicano")) {
-            System.out.println("ATENÇÃO: Não aceitamos imigrantes da nacionalidade "
-                    + nacionalidade.toUpperCase() + ".");
-            System.out.println("O imigrante se suicidou com 15 tiros!!!");
-            System.exit(1);
-        }
-
         if (idade < 18) {
             System.out.println("ATENÇÃO: O imigrante " + nome + " tem apenas " + idade +
                     " anos. Menores de idade não são aceitos.");
