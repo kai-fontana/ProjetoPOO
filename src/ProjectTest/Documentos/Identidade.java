@@ -22,7 +22,6 @@ public class Identidade extends Documento{
             return false;
         }
     }
-    //
 
 
     //Diminui o ano atual, pelo ano de nascimento presente na identidade, resultando na idade

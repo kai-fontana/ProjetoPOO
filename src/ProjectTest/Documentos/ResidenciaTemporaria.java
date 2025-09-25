@@ -19,7 +19,12 @@ public class ResidenciaTemporaria extends Documento{
 
     @Override
     public boolean verificarLegalidade(Imigrante dadosImigrante) {
-        return false;
+        //O máximo de tempo em residência será de 90 dias (pode ser mudado)
+        if(diasDeResidencia <= 90){
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public String getMotivo() {

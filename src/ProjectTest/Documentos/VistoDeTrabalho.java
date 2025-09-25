@@ -22,7 +22,12 @@ public class VistoDeTrabalho extends Documento{
 
     @Override
     public boolean verificarLegalidade(Imigrante dadosImigrante) {
-        return false;
+        //O máximo de tempo com Visto de Trabalho será de 180 dias (pode ser mudado)
+        if(getDiasDeTrabalho() <= 180){
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public String getProfissao() {

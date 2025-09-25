@@ -18,7 +18,11 @@ public class Passaporte extends Documento{
 
     @Override
     public boolean verificarLegalidade(Imigrante dadosImigrante) {
-        return false;
+        if(dadosImigrante.getNacionalidade().equals(getPaisDeOrigem())){
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public String getNumeroDoPassaporte() {
